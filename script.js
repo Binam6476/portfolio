@@ -1,11 +1,10 @@
-// Navbar Active on Scroll
 const sections = document.querySelectorAll("section");
 const navLinks = document.querySelectorAll(".nav-link");
 
 window.addEventListener("scroll", () => {
   let current = "";
   sections.forEach(section => {
-    const sectionTop = section.offsetTop - 120;
+    const sectionTop = section.offsetTop - 150;
     if (window.scrollY >= sectionTop) {
       current = section.getAttribute("id");
     }
@@ -14,21 +13,16 @@ window.addEventListener("scroll", () => {
   navLinks.forEach(link => {
     link.classList.remove("active");
     if (link.getAttribute("href") === "#" + current) {
-      link.classList.add("active");
+      link.parentElement.classList.add("active"); // add active to li, not just link
+    } else {
+      link.parentElement.classList.remove("active");
     }
   });
 });
+const hamburger = document.getElementById("hamburger");
+const navList = document.querySelector(".ul-list");
 
-// Reveal Animation
-const reveals = document.querySelectorAll(".reveal");
+hamburger.addEventListener("click", () => {
+  navList.classList.toggle("show");  // show/hide menu
+});
 
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("active");
-      observer.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.2 });
-
-reveals.forEach(el => observer.observe(el));

@@ -792,4 +792,117 @@ html {
 }
 
 
+/* Hide hamburger on desktop */
+.hamburger {
+  display: none;
+}
+
+/* Mobile styling */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+    font-size: 28px;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 1001;
+  }
+
+  .ul-list {
+    display: none; /* hide navbar initially */
+    flex-direction: column;
+    gap: 15px;
+    width: 200px;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    border-radius: 12px;
+  }
+
+  /* Show menu when active */
+  .ul-list.show {
+    display: flex;
+  }
+}
+
+
+
+/*margin ko lagi*/
+@media (max-width: 768px) {
+  /* Remove extra margins/paddings */
+  .home-section,
+  .about-section,
+  .skills-section,
+  .projects-section,
+  .services-section,
+  .contact {
+      padding-left: 15px;
+      padding-right: 15px;
+      margin: 0;
+  }
+
+  /* Make containers full width */
+  .home-container,
+  .about-container,
+  .skills-grid,
+  .projects-grid,
+  .contact-content {
+      width: 100%;
+      gap: 20px;
+      flex-direction: column; /* stack vertically */
+  }
+
+  /* Images scale properly */
+  .home-photo img,
+  .about-photo img,
+  .project-card img {
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+  }
+}
+/*this is for font */
+@media (max-width: 768px) {
+  .home-text h1 {
+      font-size: 2rem;
+  }
+  .home-text h2 {
+      font-size: 1.5rem;
+  }
+  .about-text h2,
+  .skills-container h2,
+  .projects-container h2,
+  .services-container h2 {
+      font-size: 2rem;
+  }
+  .about-text p,
+  .skills-container p,
+  .projects-container p {
+      font-size: 16px;
+  }
+  .contact p {
+      font-size: 2rem;
+  }
+  .contact h1 {
+      font-size: 1.5rem;
+  }
+  .btn-home2,
+  .btn-send {
+      font-size: 16px;
+      padding: 8px 12px;
+  }
+}
+
+
+
+@media (max-width: 768px) {
+  .home-photo {
+    display: none;
+  }
+}
+
 

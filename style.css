@@ -1,4 +1,9 @@
 
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 header {
   position: fixed;
   top: 0;
@@ -198,10 +203,12 @@ header {
     display: flex;
     gap: 20px;
     margin-top: 4px; 
+    flex-wrap: wrap;
 }
 
 .home-text .social-icons a {
     display: flex;
+    
     align-items: center;
     justify-content: center;
     width: 35px;
@@ -285,6 +292,24 @@ header {
     .about-photo img {
         max-width: 300px;
         margin-bottom: 30px;
+    }
+    .services-container h2{
+      font-size: 3rem;
+    }
+    .services-container .services-subtitle{
+      font-size: 2rem !important;
+    }
+    .skills-grid{
+              display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .projects-grid{
+              flex-direction: column;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
     }
 }
 
@@ -902,6 +927,19 @@ html {
 @media (max-width: 768px) {
   .home-photo {
     display: none;
+  }
+}
+
+@media (max-width :348px) {
+  .form-group input{
+    width: 70%;
+  }
+  .contact-form textarea
+  {
+    width: 70%;
+  }
+  .contact p{
+    font-size: 1rem;
   }
 }
 
